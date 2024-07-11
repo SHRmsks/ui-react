@@ -1,17 +1,21 @@
 {
-  "name": "ui-react",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@whotookmyname/uireact",
+  "version": "0.1.01",
+  "main": "dist/index.js",
+  "description": "A free UI components that depends on React",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && npm run build:dist",
+    "build:dist": "babel src/index.js -o dist/index.js",
     "start": "next start",
     "lint": "next lint"
   },
-  "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.4"
+  "peerDependencies": {
+   "react": "^18",
+    "react-dom": "^18"
   },
   "devDependencies": {
     "typescript": "^5",
@@ -21,6 +25,19 @@
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "eslint": "^8",
-    "eslint-config-next": "14.2.4"
-  }
+    "eslint-config-next": "14.2.4",
+    "react": "^18",
+    "react-dom": "^18",
+    "next": "14.2.4",
+    "@babel/cli": "^7.15.7",
+    "@babel/preset-env": "^7.15.6",
+    "@babel/preset-react": "^7.14.5"
+
+  },
+   "files": [
+    "dist"
+  ],
+  "keywords": ["UI", "predefined", "react"],
+  "author": "whotookmyname",
+  "license": "MIT"
 }
